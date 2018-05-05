@@ -1,0 +1,41 @@
+<html/>
+
+<script>
+binary(3,10);
+
+function binary(target, end){
+  var start = 0;
+  var guesses = 0;
+  var middle;
+
+  while(middle!=target){  
+    middle = Math.floor((end + start)/ 2);
+    
+    if (middle === target){
+      guesses++;
+      console.log('middle, number:' + middle + ', ' + guesses);
+      console.log('you win');
+    }
+
+    else if (middle < target){
+      guesses++;
+      console.log('middle, number:' + middle + ', ' + guesses);
+      start = middle + 1;
+      
+    }
+
+    else{
+      guesses++;
+      console.log('middle, number:' + middle + ', ' + guesses);
+      end = middle - 1;
+   
+    }
+
+  }  
+  
+
+}
+
+</script>
+
+</html>

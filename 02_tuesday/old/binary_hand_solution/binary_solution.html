@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<script>
+
+var counter = 0;
+
+// convert numbers 0-to-31
+var timer = function() {
+
+	if (counter <=31 ){
+		document.getElementById('number').value = counter;
+		counter++;
+		convert();
+		setTimeout(timer, 1000);		
+	}
+
+};
+
+
+var convert = function () {
+
+	var number = Number(document.getElementById('number').value);
+	number = checkPosition(number, 16, '16');
+	number = checkPosition(number,  8, '08');
+	number = checkPosition(number,  4, '04');
+	number = checkPosition(number,  2, '02');
+	number = checkPosition(number,  1, '01');				
+};
+
+var checkPosition = function(number, position, positionStr){
+	var element = document.getElementById('position_' + positionStr);
+
+	if (number >= position){
+		element.src = positionStr + '_on.png';
+		number -= position;
+	}
+	else
+		element.src = positionStr + '_off.png';
+
+	return number;	
+};
+
+</script>
+
+<style> img,button,input {position:absolute; font-size:2em}} </style>
+
+<img id="palm" src='palm.png' style="left:100px; top:270px;" >
+<img id="position_01" src='01_on.png' style="left:440px; top:285px;">
+<img id="position_02" src='02_on.png' style="left:350px; top:50px;">
+<img id="position_04" src='04_on.png' style="left:250px; top:5px;">
+<img id="position_08" src='08_on.png' style="left:111px; top:40px;">
+<img id="position_16" src='16_on.png' style="left:5px; top:120px;" >
+
+
+<button style="left:50px;top:650px;" onclick="convert()">convert</button>
+<input type="text" id="number" style="left:200px; top:650px; "><br>
+<button style="left:50px;top:700px;" onclick="timer()">timer</button>
+
+</html>
+     

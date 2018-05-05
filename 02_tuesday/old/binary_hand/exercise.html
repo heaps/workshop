@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<script>
+
+var convert = function () {
+
+	var num = Number(document.getElementById('number').value);
+
+	if (num >= 16){
+		document.getElementById('position_16').src = '16_on.png';
+		num = num - 16;
+	}
+	else{
+		document.getElementById('position_16').src = '16_off.png';
+	}
+
+	if (num >= 8){
+		document.getElementById('position_08').src = '08_on.png';
+		num = num - 8;
+	}
+	else{
+		document.getElementById('position_08').src = '08_off.png';
+	}
+
+	if (num >= 4){
+		document.getElementById('position_04').src = '04_on.png';
+		num = num - 4;
+	}
+	else{
+		document.getElementById('position_04').src = '04_off.png';
+	}
+
+	if (num >= 2){
+		document.getElementById('position_02').src = '02_on.png';
+		num = num - 2;
+	}
+	else{
+		document.getElementById('position_02').src = '02_off.png';
+	}
+
+	if (num >= 1){
+		document.getElementById('position_01').src = '01_on.png';
+		num = num - 1;
+	}
+	else{
+		document.getElementById('position_01').src = '01_off.png';
+	}
+
+
+};
+
+</script>
+
+<style> img,button,input {position:absolute; font-size:2em}</style>
+
+<img id="palm" src='palm.png' style="left:100px; top:270px;" >
+<img id="position_01" src='01_on.png' style="left:440px; top:285px;">
+<img id="position_02" src='02_on.png' style="left:350px; top:50px;">
+<img id="position_04" src='04_on.png' style="left:250px; top:5px;">
+<img id="position_08" src='08_on.png' style="left:111px; top:40px;">
+<img id="position_16" src='16_on.png' style="left:5px; top:120px;" >
+
+
+<button style="left:50px;top:650px;" onclick="convert()">convert</button>
+<input type="text" id="number" style="left:200px; top:650px; ">
+
+</html>
+     

@@ -1,0 +1,63 @@
+<html>
+
+<script>
+var a = 'n';
+var b = 'o';
+var c = 'p';
+var d = 'q';
+var e = 'r';
+var f = 's';
+var g = 't';
+var h = 'u';
+var i = 'v';
+var j = 'w';
+var k = 'x';
+var l = 'y';
+var m = 'z';
+var n = 'a';
+var o = 'b';
+var p = 'c';
+var q = 'd';
+var r = 'e';
+var s = 'f';
+var t = 'g';
+var u = 'h';
+var v = 'i';
+var w = 'j';
+var x = 'k';
+var y = 'l';
+var z = 'm';
+
+var output = u+n+p+v+r+a+q+n+" "+o+r+y+y+n; 
+console.log(output);
+
+
+
+//intro to arrays
+
+var alphabet = [' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ,  'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ,  'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ,  'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ,  'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ,  'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ];
+
+//6-1-3-8-1-4-1 2-5-12-12-1
+var cypher = [6, 1, 3, 8, 1, 4, 1, 0, 2, 5, 12, 12, 1];
+var answer = '';
+
+answer = alphabet[6] + alphabet[1] + alphabet[3] + alphabet[8] + alphabet[1] + alphabet[4] + alphabet[1] + alphabet[0] + alphabet[2] + alphabet[5] + alphabet[12] + alphabet[12] + alphabet[1];
+
+answer = alphabet[cypher[0]] + alphabet[cypher[1]] + alphabet[cypher[2]] + alphabet[cypher[3]] + alphabet[cypher[4]] + alphabet[cypher[5]] + alphabet[cypher[6]] + alphabet[cypher[7]] + alphabet[cypher[8]] + alphabet[cypher[9]] + alphabet[cypher[10]] + alphabet[cypher[11]] + alphabet[cypher[12]];
+
+//CHALLENGE - USING THE SAME CYPHER CODE ABOUT WRITE A LOOP THAT PRODUCES THE SAME ANSWER
+var index; 
+var i =0;
+while (i< cypher.length){
+	index = cypher[i];
+	answer += alphabet[index];
+	i++;
+}
+
+console.log(answer); 
+
+
+</script>
+
+
+</hmtl>

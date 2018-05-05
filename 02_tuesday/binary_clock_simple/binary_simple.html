@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<script>
+
+var zero = 'zero.jpg';
+var one = 'one.jpg';
+
+var timer = function() {
+	// get current time
+	currentDate = new Date();
+
+	// time is set using 6 columns
+	// first pair of columns used for hours 00-to-24
+	setClock('hour_col1', Math.floor(currentDate.getHours() / 10));
+	setClock('hour_col2', currentDate.getHours() % 10);
+
+	// second pair of columns used for minutes 00-to-60
+	setClock('min_col1', Math.floor(currentDate.getMinutes() / 10));
+	setClock('min_col2', currentDate.getMinutes() % 10);
+
+	// third pair of columns used for seconds 00-to-60
+	setClock('sec_col1', Math.floor(currentDate.getSeconds() / 10));
+	setClock('sec_col2', currentDate.getSeconds() % 10);
+	setTimeout(timer, 1000);
+};
+
+var setClock = function (col, num) {
+
+	if (num >= 8){
+		document.getElementById(col + '_pos8').src = one;
+		num -= 8; 
+	}
+	else
+		document.getElementById(col + '_pos8').src = zero;
+
+	if (num >= 4){
+		document.getElementById(col + '_pos4').src = one;
+		num -= 4;
+	}
+	else
+		document.getElementById(col + '_pos4').src = zero;
+
+	if (num >= 2){
+		document.getElementById(col + '_pos2').src = one;
+		num -= 2;
+	}
+	else
+		document.getElementById(col + '_pos2').src = zero;
+
+	if (num >= 1){
+		document.getElementById(col + '_pos1').src = one;
+		num -= 1;
+	}
+	else
+		document.getElementById(col + '_pos1').src = zero;
+
+	return num;
+};
+
+window.onload = timer;
+
+</script>
+
+<style> img {position:absolute; } </style>
+
+<img id="hour_col1_pos1" src='one.jpg' style="left:10px; top:340px;" >
+<img id="hour_col1_pos2" src='one.jpg' style="left:10px; top:230px;" >
+<img id="hour_col1_pos4" src='one.jpg' style="left:10px; top:120px; visibility:hidden" >
+<img id="hour_col1_pos8" src='one.jpg' style="left:10px; top:10px; visibility:hidden" >
+
+<img id="hour_col2_pos1" src='one.jpg' style="left:120px; top:340px;" >
+<img id="hour_col2_pos2" src='one.jpg' style="left:120px; top:230px;" >
+<img id="hour_col2_pos4" src='one.jpg' style="left:120px; top:120px;" >
+<img id="hour_col2_pos8" src='one.jpg' style="left:120px; top:10px;" >
+	
+<img id="min_col1_pos1" src='one.jpg' style="left:230px; top:340px;" >
+<img id="min_col1_pos2" src='one.jpg' style="left:230px; top:230px;" >
+<img id="min_col1_pos4" src='one.jpg' style="left:230px; top:120px;" >
+<img id="min_col1_pos8" src='one.jpg' style="left:230px; top:10px; visibility:hidden" >
+
+<img id="min_col2_pos1" src='one.jpg' style="left:340px; top:340px;" >
+<img id="min_col2_pos2" src='one.jpg' style="left:340px; top:230px;" >
+<img id="min_col2_pos4" src='one.jpg' style="left:340px; top:120px;" >
+<img id="min_col2_pos8" src='one.jpg' style="left:340px; top:10px;" >
+
+<img id="sec_col1_pos1" src='one.jpg' style="left:450px; top:340px;" >
+<img id="sec_col1_pos2" src='one.jpg' style="left:450px; top:230px;" >
+<img id="sec_col1_pos4" src='one.jpg' style="left:450px; top:120px;" >
+<img id="sec_col1_pos8" src='one.jpg' style="left:450px; top:10px; visibility:hidden" >
+
+<img id="sec_col2_pos1" src='one.jpg' style="left:560px; top:340px;" >
+<img id="sec_col2_pos2" src='one.jpg' style="left:560px; top:230px;" >
+<img id="sec_col2_pos4" src='one.jpg' style="left:560px; top:120px;" >
+<img id="sec_col2_pos8" src='one.jpg' style="left:560px; top:10px;" >
+
+</html>
+     

@@ -1,0 +1,34 @@
+<div id="ball" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:green"></div>
+
+<script>
+
+var velocityX = 5;
+var velocityY = 3;
+var positionX = 0;
+var positionY = 0;
+var ball = document.getElementById('ball');
+
+
+setInterval(function(){
+	if(positionX > 200 || positionX < 0){
+		velocityX = -1*velocityX;
+	}
+  if(positionY > 200 || positionY < 0){
+    velocityY = -1*velocityY;
+  }  
+	positionX = positionX + velocityX;
+	ball.style.left = positionX + 'px';
+
+  positionY = positionY + velocityY;
+  ball.style.top = positionY + 'px';  
+},100);
+
+</script>
