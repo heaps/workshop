@@ -1,0 +1,40 @@
+// variable definition
+var ball;
+
+// function calls
+ball = create();
+
+size(ball,200,200);
+
+color(ball,255,0,0);
+
+move(ball,50,50);
+
+colorRandom(ball);
+
+zIndex(ball,5);
+
+repeatMove(ball, 10, 10, 5);
+
+// loop exercise
+var counter = 0;
+while (counter < 10) {
+    create();
+    counter++;
+}
+
+// arrays exercise
+var list = [];
+list.push(create());
+list.push(create());
+list.push(create());
+list.push(create());
+
+// change color of balls in array
+var i=0;
+var length = list.length;
+while (i < length) {
+    var ball = list[i];
+    colorRandom(ball);
+    i++;
+}
