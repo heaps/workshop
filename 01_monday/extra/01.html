@@ -1,0 +1,40 @@
+<div id="art"></div>
+
+<script>
+
+var xi = 400;
+var yi = 400;
+var r  = 200;
+
+var addCircle = function(angle){
+  var x = xi + (r * Math.cos(angle));  
+  var y = yi + (r * Math.sin(angle));
+  x = Math.round(x);
+  y = Math.round(y);
+  var div = `
+      <div style="
+        z-index:5;
+        position:absolute;
+        left:${x}px;
+        top:${y}px;
+        width:100px;
+        height:100px;
+        border-radius:50%;
+        border: 3px solid">
+      </div>
+  `;
+  return div;
+}
+
+function toRadians (angle) {
+  return angle * (Math.PI / 180);
+}
+
+// get handle on 'art' div
+var art = document.getElementById('art');
+
+for (let angle=0; angle<360; angle+=45) {
+  var circle = addCircle(toRadians(angle));
+  art.innerHTML += circle;
+}
+</script>
