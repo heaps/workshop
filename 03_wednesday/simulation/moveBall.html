@@ -15,20 +15,5 @@ var position = 0;
 var ball = document.getElementById('ball');
 
 
-setInterval(function(){
-
-	if(position>200){
-		velocity = -1*velocity;
-	}
-
-	if (position<0){
-		velocity = -1*velocity;
-	}
-
-	position = position + velocity;
-	ball.style.left = position + 'px';
-}, 100);
-
-
 
 </script>
