@@ -1,0 +1,38 @@
+<div id="ball" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:green"></div>
+
+<audio id="audio" src="sound.wav"></audio>
+
+<script>
+
+var velocityX = 5;
+var velocityY = 3;
+var positionX = 0;
+var positionY = 0;
+var ball  = document.getElementById('ball');
+var audio = document.getElementById("audio");
+
+setInterval(function(){
+	if(positionX > 200 || positionX < 0){
+		velocityX = -1*velocityX;
+    audio.play();
+	}
+  if(positionY > 200 || positionY < 0){
+    velocityY = -1*velocityY;
+    audio.play();
+  }  
+	positionX = positionX + velocityX;
+	ball.style.left = positionX + 'px';
+
+  positionY = positionY + velocityY;
+  ball.style.top = positionY + 'px';  
+},100);
+
+</script>
